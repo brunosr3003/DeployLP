@@ -1,0 +1,40 @@
+.Calc {
+  text-align: center;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+/* Adicione este CSS */
+.kit-list {
+max-height: 400px; /* Define a altura máxima */
+overflow-y: auto; /* Permite a rolagem vertical quando o conteúdo exceder a altura */
+}
+
+
+input {
+  padding: 10px;
+  margin-right: 10px;
+  font-size: 1rem;
+}
+
+button {
+  padding: 10px;
+  font-size: 1rem;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  padding: 5px;
+  border-bottom: 1px solid #ddd;
+}
+
+h3 {
+  margin-top: 20px;
+}

@@ -1,0 +1,71 @@
+/* frontend/src/components/Kanban/Kanban.css */
+
+/* Classe para definir o tamanho fixo do card */
+.fixed-card {
+    width: 290px; /* Defina a largura desejada */
+    height: 200px; /* Defina a altura desejada */
+    overflow: hidden; /* Esconde o conteúdo que excede o tamanho */
+  }
+  
+  /* Classe para títulos com ellipsis */
+  .card-title {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  /* Classe para valores com ellipsis */
+  .card-value {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  /* frontend/src/components/Kanban/Kanban.css */
+
+  /* frontend/src/components/Kanban/Kanban.css */
+
+/* Classe para aplicar truncamento no dropdown */
+.truncate-dropdown {
+    max-width: 200px; /* Ajuste conforme necessário */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  /* Classe para aplicar truncamento nas opções do dropdown */
+  .truncate-dropdown-option {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+
+  /* frontend/src/components/Kanban/Kanban.css */
+
+/* Classe para valores totais com ellipsis */
+.total-value {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100px; /* Ajuste conforme necessário */
+  }
+  
+
+/* Ajuste para telas menores */
+@media (max-width: 768px) {
+    .fixed-card {
+      width: 200px; /* Reduza a largura para telas menores */
+      height: 180px; /* Ajuste a altura conforme necessário */
+    }
+  
+    .truncate-dropdown {
+      max-width: 150px;
+    }
+  
+    .total-value {
+      max-width: 80px;
+    }
+  }
+  
+  
