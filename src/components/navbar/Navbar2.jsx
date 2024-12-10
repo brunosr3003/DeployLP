@@ -1,7 +1,7 @@
 // src/components/navbar/Navbar2.jsx
 
 import React, { useEffect, useState, useContext } from "react";
-import Logo from "../../assets/LogoMultiluzSolar.png";
+import Logo from "../../public/Icon.png";
 import { AuthContext } from "../../AuthContext"; // Ajuste o caminho conforme necessário
 import { useNavigate, Link } from "react-router-dom"; // Importação para navegação pós-logout e Link
 import { FaCog, FaUserCircle } from "react-icons/fa"; // Importação dos ícones

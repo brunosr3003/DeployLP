@@ -24,7 +24,7 @@ router.get('/api/usuario', async (req, res) => {
   }
 
   try {
-    const query = `SELECT * FROM \`sd-gestao.CRM.CadUsuario\` WHERE EmpresaRelacionada = @EmpresaRelacionada`;
+    const query = `SELECT * FROM \`sd-gestao.Deploy.CadUsuario\` WHERE EmpresaRelacionada = @EmpresaRelacionada`;
     const options = {
       query,
       params: { EmpresaRelacionada: empresa },
@@ -50,19 +50,19 @@ router.post('/api/usuario', async (req, res) => {
     const hashedSenha = await bcrypt.hash(Senha, 10);
 
     const insertQuery = `
-      INSERT INTO \`sd-gestao.CRM.CadUsuario\` (IdUsuario, Nome, Email, Telefone, Senha, Cargo, Unidade, EmpresaRelacionada, CPF)
+      INSERT INTO \`sd-gestao.Deploy.CadUsuario\` (IdUsuario, Nome, Email, Telefone, Senha, Cargo, Unidade, EmpresaRelacionada, CPF)
       VALUES (@IdUsuario, @Nome, @Email, @Telefone, @Senha, @Cargo, @Unidade, @EmpresaRelacionada, @CPF)
     `;
     const options = {
       query: insertQuery,
-      params: { 
+      params: {
         IdUsuario: uuidv4(), // Gerar um UUID para IdUsuario
-        Nome, 
-        Email, 
-        Telefone, 
-        Senha: hashedSenha, 
-        Cargo, 
-        Unidade, 
+        Nome,
+        Email,
+        Telefone,
+        Senha: hashedSenha,
+        Cargo,
+        Unidade,
         EmpresaRelacionada,
         CPF // Incluindo CPF
       },
@@ -81,7 +81,7 @@ router.get('/api/usuario/:IdUsuario', async (req, res) => {
   const { IdUsuario } = req.params;
 
   try {
-    const query = `SELECT * FROM \`sd-gestao.CRM.CadUsuario\` WHERE IdUsuario = @IdUsuario LIMIT 1`;
+    const query = `SELECT * FROM \`sd-gestao.Deploy.CadUsuario\` WHERE IdUsuario = @IdUsuario LIMIT 1`;
     const options = {
       query,
       params: { IdUsuario },
@@ -108,7 +108,7 @@ router.put('/api/usuario/:IdUsuario', async (req, res) => {
 
   try {
     // Verifica se o usuário existe
-    const usuarioQuery = `SELECT * FROM \`sd-gestao.CRM.CadUsuario\` WHERE IdUsuario = @IdUsuario LIMIT 1`;
+    const usuarioQuery = `SELECT * FROM \`sd-gestao.Deploy.CadUsuario\` WHERE IdUsuario = @IdUsuario LIMIT 1`;
     const [usuarioRows] = await bigquery.query({
       query: usuarioQuery,
       params: { IdUsuario },
@@ -156,7 +156,7 @@ router.put('/api/usuario/:IdUsuario', async (req, res) => {
     updateFields = updateFields.slice(0, -2);
 
     const updateQuery = `
-      UPDATE \`sd-gestao.CRM.CadUsuario\`
+      UPDATE \`sd-gestao.Deploy.CadUsuario\`
       SET ${updateFields}
       WHERE IdUsuario = @IdUsuario
     `;
@@ -169,7 +169,7 @@ router.put('/api/usuario/:IdUsuario', async (req, res) => {
 
     // Buscar os dados atualizados do usuário
     const [updatedRows] = await bigquery.query({
-      query: `SELECT * FROM \`sd-gestao.CRM.CadUsuario\` WHERE IdUsuario = @IdUsuario LIMIT 1`,
+      query: `SELECT * FROM \`sd-gestao.Deploy.CadUsuario\` WHERE IdUsuario = @IdUsuario LIMIT 1`,
       params: { IdUsuario },
     });
 
@@ -187,7 +187,7 @@ router.delete('/api/usuario/:IdUsuario', async (req, res) => {
 
   try {
     // Verifica se o usuário existe
-    const usuarioQuery = `SELECT * FROM \`sd-gestao.CRM.CadUsuario\` WHERE IdUsuario = @IdUsuario LIMIT 1`;
+    const usuarioQuery = `SELECT * FROM \`sd-gestao.Deploy.CadUsuario\` WHERE IdUsuario = @IdUsuario LIMIT 1`;
     const [usuarioRows] = await bigquery.query({
       query: usuarioQuery,
       params: { IdUsuario },
@@ -196,7 +196,7 @@ router.delete('/api/usuario/:IdUsuario', async (req, res) => {
       return res.status(404).json({ error: 'Usuário não encontrado.' });
     }
 
-    const deleteQuery = `DELETE FROM \`sd-gestao.CRM.CadUsuario\` WHERE IdUsuario = @IdUsuario`;
+    const deleteQuery = `DELETE FROM \`sd-gestao.Deploy.CadUsuario\` WHERE IdUsuario = @IdUsuario`;
     const options = {
       query: deleteQuery,
       params: { IdUsuario },

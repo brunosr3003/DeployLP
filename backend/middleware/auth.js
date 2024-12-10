@@ -24,7 +24,7 @@ router.post('/api/login', async (req, res) => {
   }
   try {
     const query = `
-      SELECT * FROM \`sd-gestao.CRM.CadUsuario\`
+      SELECT * FROM \`sd-gestao.Deploy.CadUsuario\`
       WHERE Email = @Email
       LIMIT 1
     `;
@@ -87,7 +87,7 @@ router.get('/api/me', authenticateToken, async (req, res) => {
   try {
     const query = `
       SELECT Nome, Email, Cargo, Unidade
-      FROM \`sd-gestao.CRM.CadUsuario\`
+      FROM \`sd-gestao.Deploy.CadUsuario\`
       WHERE IdUsuario = @IdUsuario
       LIMIT 1
     `;

@@ -4,8 +4,8 @@ import React, { useState, useContext } from "react";
 import axios from 'axios';
 import { AuthContext } from '../../AuthContext'; 
 import { useNavigate, Link } from "react-router-dom"; 
-import Logo from "../../assets/LogoMultiluzSolar.png";
-import Banner from "../../assets/modulo.jpeg"; 
+import Logo from "../../assets/Icon.jpg";
+import Banner from "../../assets/agro.jpg"; 
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -15,14 +15,13 @@ const Login = () => {
   const [isError, setIsError] = useState(false);
   const navigate = useNavigate(); 
 
-  // Obter a porta a partir das variáveis de ambiente
-  const port = import.meta.env.REACT_APP_PORT || 1000; 
+
 
   const handleSubmit = async (e) => {
     e.preventDefault(); 
     try {
       // Construir a URL dinamicamente usando a porta do .env
-      const url = `https://api.multiluzsolar.com.br/app1000/v1/api/login` || `http://localhost:${port}/v1/api/login`;
+      const url = `http://localhost:1000/v1/api/login`;
       
       const response = await axios.post(url, { email, password });
       if (response.data.success) {
@@ -88,7 +87,7 @@ const Login = () => {
             />
             {/* Link "Esqueci minha senha" */}
             <div className="text-right">
-              <Link to="https://api.whatsapp.com/send/?phone=5534996728437&text&type=phone_number&app_absent=0" className="text-sm text-blue-600 hover:text-blue-800">
+              <Link to="https://api.whatsapp.com/send/?phone=553196102371&text&type=phone_number&app_absent=0" className="text-sm text-blue-600 hover:text-blue-800">
                 Esqueci minha senha
               </Link>
             </div>
@@ -105,7 +104,7 @@ const Login = () => {
           <div className="mt-6 text-center">
             <p className="text-sm text-gray-600">
               Não tem uma conta?{' '}
-              <Link to="https://api.whatsapp.com/send/?phone=5534996728437&text&type=phone_number&app_absent=0" className="text-blue-600 hover:text-blue-800 font-semibold">
+              <Link to="https://api.whatsapp.com/send/?phone=553196102371&text&type=phone_number&app_absent=0" className="text-blue-600 hover:text-blue-800 font-semibold">
                 Crie uma agora mesmo!
               </Link>
             </p>

@@ -1,33 +1,18 @@
-// src/pages/HomeUser.jsx
+// src/App.jsx
+import React from "react";
 
-import React, { useState } from 'react';
-import Navbar2 from '../components/navbar/Navbar2';
-import KanbanBoard from '../components/Kanban/KanbanBoard';
-import ClienteForm from '../components/Clientes/ClienteForm';
+import Header from "../components/Hero/Header";
+import Hero from "../components/Hero/Hero";
+import Footer from "../components/Hero/Footer";
+import Introducao from "../components/Hero/Introducao";
 
 const HomeUser = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
-  const handleOpenForm = () => {
-    setIsModalOpen(true);
-  };
-
-  const handleCloseForm = () => {
-    setIsModalOpen(false);
-  };
-
   return (
-    <div className="dark:bg-slate-900 dark:text-white min-h-screen flex flex-col">
-      <Navbar2 />
-      <div className="flex-1 p-6">
-
-
-        {/* Exibir Kanban Board */}
-        <KanbanBoard />
-
-        {/* Formulário de Cliente como Modal */}
-        {isModalOpen && <ClienteForm onClose={handleCloseForm} />}
-      </div>
+    <div className="App">
+      <Header />
+      <Hero />
+      <Introducao />
+      <Footer />
     </div>
   );
 };
