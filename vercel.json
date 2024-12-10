@@ -14,7 +14,7 @@
     }
   ],
   "routes": [
-    { "src": "/api/(.*)", "dest": "backend/app.js" },
-    { "src": "/(?!assets/|static/|favicon.ico|robots.txt)(.*)", "dest": "/index.html" }
+    { "src": "/v1/api/(.*)", "dest": "backend/app.js" },
+    { "src": "/(?!v1/api/)(.*)", "dest": "/index.html" }
   ]
 }
