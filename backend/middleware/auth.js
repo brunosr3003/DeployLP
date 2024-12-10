@@ -10,7 +10,7 @@ const router = express.Router();
 // Conecta ao BigQuery usando credenciais
 const bigquery = new BigQuery({
   projectId: 'sd-gestao',
-  keyFilename: process.env.GOOGLE_APPLICATION_CREDENTIALS || '../bigquery-key.json',
+  keyFilename:'./Key.json',
 });
 
 const JWT_SECRET = process.env.JWT_SECRET;

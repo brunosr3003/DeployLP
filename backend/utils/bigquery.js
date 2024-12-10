@@ -6,7 +6,7 @@ dotenv.config();
 
 const bigquery = new BigQuery({
   projectId: 'sd-gestao',
-  keyFilename: process.env.GOOGLE_APPLICATION_CREDENTIALS || '../bigquery-key.json',
+  keyFilename: './Key.json.json',
 });
 
 export default bigquery;

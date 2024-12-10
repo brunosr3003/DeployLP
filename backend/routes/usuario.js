@@ -10,7 +10,7 @@ const router = express.Router();
 // Configuração do BigQuery
 const bigquery = new BigQuery({
   projectId: 'sd-gestao',
-  keyFilename: process.env.GOOGLE_APPLICATION_CREDENTIALS || '../bigquery-key.json',
+  keyFilename: './Key.json',
 });
 
 // Rota GET para listar usuários de uma empresa específica
