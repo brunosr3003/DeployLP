@@ -7,10 +7,10 @@ import bcrypt from 'bcrypt';
 
 const router = express.Router();
 
-// Conecta ao BigQuery usando credenciais da variável de ambiente
+// Conecta ao BigQuery usando credenciais
 const bigquery = new BigQuery({
   projectId: 'sd-gestao',
-  credentials: JSON.parse(process.env.GOOGLE_APPLICATION_CREDENTIALS),
+  keyFilename:'./Key.json',
 });
 
 const JWT_SECRET = process.env.JWT_SECRET;
@@ -107,11 +107,6 @@ router.get('/api/me', authenticateToken, async (req, res) => {
     console.error('Erro ao buscar usuário:', error);
     res.status(500).json({ success: false, message: 'Erro interno do servidor.' });
   }
-});
-
-// Rota de Teste
-router.get('/api/teste', (req, res) => {
-  res.json({ mensagem: 'Backend funcionando!' });
 });
 
 // Exemplo de rota protegida

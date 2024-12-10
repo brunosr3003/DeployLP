@@ -21,7 +21,7 @@ const Login = () => {
     e.preventDefault(); 
     try {
       // Construir a URL dinamicamente usando a porta do .env
-      const url = `/v1/api/login`;
+      const url = `https://api.multiluzsolar.com.br/app1000/v1/api/login`;
       
       const response = await axios.post(url, { email, password });
       if (response.data.success) {
