@@ -1,16 +1,7 @@
-  // vite.config.js
-  import { defineConfig } from 'vite';
-  import react from '@vitejs/plugin-react';
+import { defineConfig } from 'vite';
 
-  export default defineConfig({
-    plugins: [react()],
-    server: {
-      proxy: {
-        '/v1/api': {
-          target: 'http://localhost:1000',
-          changeOrigin: true,
-          secure: false,
-        },
-      },
-    },
-  });
+export default defineConfig({
+  build: {
+    outDir: 'dist',
+  },
+});
