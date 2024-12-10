@@ -7,6 +7,7 @@ export const AuthContext = createContext();
 
 const INACTIVITY_LIMIT = 15 * 60 * 1000; // 15 minutos
 const SESSION_LIMIT = 60 * 60 * 1000;    // 1 hora
+const port = import.meta.env.REACT_APP_PORT || 1000; 
 
 export const AuthProvider = ({ children }) => {
   const [auth, setAuth] = useState({
@@ -111,7 +112,7 @@ export const AuthProvider = ({ children }) => {
     const fetchUser = async () => {
       if (auth.isAuthenticated && auth.token) {
         try {
-          const response = await axios.get(`/v1/api/me`, { 
+          const response = await axios.get(`https://api.multiluzsolar.com.br/app1000/v1/api/me`, {
             headers: { Authorization: `Bearer ${auth.token}` },
           });
           if (response.data.user) {
