@@ -4,24 +4,12 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist",
-    "calc": "node ./backend/calc.js",
-    "login": "node ./backend/login.js",
-    "cliente": "node ./backend/cadCliente.js",
-    "status": "node ./backend/status.js",
-    "config": "node ./backend/config.js",
-    "gerador": "node ./backend/gerador.js",
-    "clicksign": "node ./backend/clicksign.js",
-    "documento": "node ./backend/documento.js",
-    "app": "node ./backend/app.js",
-    "start:all": "concurrently \"npm run calc\" \"npm run login\" \"npm run cliente\" \"npm run status\" \"npm run config\" \"npm run gerador\" \"npm run clicksign\" \"npm run documento\""
-  },
+"scripts": {
+  "dev": "concurrently \"vite\" \"npm run dev-backend\"",
+  "dev-backend": "nodemon ./backend/app.js",
+  "build": "vite build",
+  "start": "node ./backend/app.js"
+},
   "dependencies": {
     "@google-cloud/bigquery": "^7.9.1",
     "@google-cloud/secret-manager": "^5.6.0",

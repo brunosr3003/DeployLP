@@ -111,7 +111,7 @@ export const AuthProvider = ({ children }) => {
     const fetchUser = async () => {
       if (auth.isAuthenticated && auth.token) {
         try {
-          const response = await axios.get(`/v1/api/me`, { // Usando proxy
+          const response = await axios.get(`/v1/api/me`, { 
             headers: { Authorization: `Bearer ${auth.token}` },
           });
           if (response.data.user) {
