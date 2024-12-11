@@ -31,25 +31,7 @@ const Header = () => {
           </Link>
         </div>
 
-        {/* Links de Navegação */}
-        <ul className="flex space-x-6">
-          <li>
-            <a href="#introducao" className="hover:underline">
-              Introdução
-            </a>
-          </li>
-          <li>
-            <a href="#servicos" className="hover:underline">
-              Serviços
-            </a>
-          </li>
-          <li>
-            <a href="#missao" className="hover:underline">
-              Missão
-            </a>
-          </li>
-          {/* Adicione mais links conforme necessário */}
-        </ul>
+       
 
         {/* Botões e Informações do Usuário */}
         <div className="flex items-center space-x-4 text-black">
