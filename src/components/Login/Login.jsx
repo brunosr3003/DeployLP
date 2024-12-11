@@ -120,8 +120,7 @@ const Login = () => {
         className="w-full md:w-full h-64 md:h-auto bg-cover bg-center relative flex items-center justify-center"
         style={{ backgroundImage: `url(${Banner})` }}
       >
-        {/* Logo acima da imagem lateral */}
-        <img src={Logo} alt="Logo" className="absolute top-4 left-4 w-48 h-auto" />
+       
       </div>
     </div>
   );

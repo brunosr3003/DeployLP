@@ -1,27 +1,71 @@
 /* src/components/Hero.css */
+
 .hero-main {
-    background-color: #f4f4f4;
-    padding: 50px 0;
-    text-align: center;
-  }
-  
-  .hero-container {
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  
-  .hero-image {
-    width: 100px;
-    margin-bottom: 20px;
-  }
-  
-  .hero-container h1 {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
-  }
-  
-  .hero-container p {
-    font-size: 1.2rem;
-    color: #555;
-  }
-  
+  background-color: #f4f4f4;
+  padding: 50px 20px;
+  text-align: left; /* Alterado para 'left' para melhor legibilidade do conteúdo */
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+.hero-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.hero-image {
+  width: 100px;
+  margin-bottom: 20px;
+}
+
+.hero-container h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.hero-container h2 {
+  font-size: 2rem;
+  margin-top: 30px;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 5px;
+}
+
+.hero-container h3 {
+  font-size: 1.75rem;
+  margin-top: 25px;
+  margin-bottom: 10px;
+}
+
+.hero-container h4 {
+  font-size: 1.5rem;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.hero-container p {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+.hero-container ul {
+  list-style-type: disc;
+  margin-left: 20px;
+  margin-bottom: 15px;
+}
+
+.hero-container ul ul {
+  list-style-type: circle;
+  margin-left: 20px;
+}
+
+.hero-container a {
+  color: #1e90ff;
+  text-decoration: none;
+}
+
+.hero-container a:hover {
+  text-decoration: underline;
+}
